@@ -1,4 +1,4 @@
-import { Flex, LinkProps, LinkBox, LinkOverlay, Text, HStack } from '@chakra-ui/react'
+import { Flex, LinkProps, LinkBox, LinkOverlay, Text, HStack, Box } from '@chakra-ui/react'
 import Link from 'next/link'
 
 import Container from '../Container'
@@ -15,18 +15,13 @@ const NavLink = (props: NavLinkProps) => (
 
 const Header = () => {
   return (
-    <Container mt={10}>
-      <Flex
-        direction={['column', 'row']}
-        justify="space-between"
-        alignItems="center"
-        px={[4, 2]}
-        // bg="blue.500"
-        py={[1.5, 0]}
-      >
-        <Text fontSize={['2xl', 'xl']} fontWeight="semibold">
-          muterbanyuwangi.id
-        </Text>
+    <Container my={10}>
+      <Flex direction={['column', 'row']} justify="space-between" alignItems="center" px={[4, 0]} py={[1.5, 0]}>
+        <Box bg="black" py={1} px={3} color="white">
+          <Text fontSize={['2xl', 'xl']} fontWeight="semibold">
+            muterbanyuwangi.id
+          </Text>
+        </Box>
 
         <HStack spacing={1} as="nav" mr={[0, 6]}>
           <NavLink href="/">Beranda</NavLink>

@@ -1,16 +1,17 @@
-import { Flex, FlexProps } from '@chakra-ui/react'
-
 import Header from './Header'
-import Footer from './Footer'
 
-const Layout = (props: FlexProps) => {
+const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <Flex w="full" as="main" direction="column" minH="100vh" {...props}>
-        {props.children}
-      </Flex>
-      <Footer />
+      <main>{children}</main>
+      <style jsx global>{`
+        #__next {
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+        }
+      `}</style>
     </>
   )
 }

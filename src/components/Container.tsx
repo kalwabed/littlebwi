@@ -6,7 +6,7 @@ interface ContainerProps extends BoxProps {
 
 const Container = (props: ContainerProps) => {
   return (
-    <Box maxW={['lg', 'xl', '4xl', '6xl']} mx="auto" {...props}>
+    <Box maxW={['lg', 'xl', '4xl']} w="full" mx="auto" {...props}>
       {props.children}
     </Box>
   )
