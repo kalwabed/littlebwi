@@ -1,19 +1,15 @@
-import { Flex, useColorMode, FlexProps } from '@chakra-ui/react'
+import { Box, BoxProps } from '@chakra-ui/react'
 
-export const Container = (props: FlexProps) => {
-  const { colorMode } = useColorMode()
+interface ContainerProps extends BoxProps {
+  isFullWidth?: boolean
+}
 
-  const bgColor = { light: 'gray.50', dark: 'gray.900' }
-
-  const color = { light: 'black', dark: 'white' }
+const Container = (props: ContainerProps) => {
   return (
-    <Flex
-      direction="column"
-      alignItems="center"
-      justifyContent="flex-start"
-      bg={bgColor[colorMode]}
-      color={color[colorMode]}
-      {...props}
-    />
+    <Box maxW={['lg', 'xl', '4xl', '6xl']} mx="auto" {...props}>
+      {props.children}
+    </Box>
   )
 }
+
+export default Container
