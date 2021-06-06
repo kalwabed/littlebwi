@@ -23,7 +23,7 @@ const Header = () => {
           </Text>
         </Box>
 
-        <HStack spacing={1} as="nav" mr={[0, 6]}>
+        <HStack spacing={1} as="nav">
           <NavLink href="/">Beranda</NavLink>
           <NavLink href="/new">Daftar</NavLink>
         </HStack>
