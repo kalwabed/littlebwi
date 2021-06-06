@@ -1,7 +1,7 @@
 import { Box, Heading, Text } from '@chakra-ui/react'
 
 const Hero = () => (
-  <Box w={['full', '70%']}>
+  <Box as="section" w={['full', '70%']}>
     <Heading as="h1" fontSize={['3xl', '6xl']}>
       Di Banyuwangi
     </Heading>
