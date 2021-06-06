@@ -17,10 +17,12 @@ const Search = () => {
             <Input placeholder="Cari tempat ngopi, kerja, dll" />
           </InputGroup>
         </Box>
-        <HStack spacing={4} mt="1rem">
+        <Flex flexWrap="wrap" mt="1rem">
           {categories.map(cat => (
             <Button
               key={cat}
+              size="sm"
+              m={1}
               _focusWithin={{ ring: 2 }}
               variant={cat === 'Semua' ? 'solid' : 'outline'}
               colorScheme={cat === 'Semua' ? 'yellow' : 'gray'}
@@ -28,7 +30,7 @@ const Search = () => {
               {cat}
             </Button>
           ))}
-        </HStack>
+        </Flex>
       </Flex>
     </Container>
   )
