@@ -1,13 +1,15 @@
-import { Box, Flex, Heading, Text } from '@chakra-ui/react'
+import { VStack } from '@chakra-ui/react'
 
 import Container from '@/components/Container'
 import Hero from '@/components/Hero'
+import Search from '@/components/Search'
 
 const HomePage = () => (
   <Container>
-    <Flex direction="column" px={[4, 0]}>
+    <VStack spacing={7} align="start" px={[4, 0]}>
       <Hero />
-    </Flex>
+      <Search />
+    </VStack>
   </Container>
 )
 
