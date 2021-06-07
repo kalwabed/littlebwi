@@ -1,4 +1,5 @@
 import { Box, Flex, Heading, HStack, Link, Text } from '@chakra-ui/react'
+import { IKImage } from 'imagekitio-react'
 import Image from 'next/image'
 
 import { GlobeIcon, InstagramIcon } from '@/components/icons'
@@ -8,7 +9,7 @@ const Card = () => {
     <Box as="section" borderBottom="1px" pb={2} borderBottomColor="gray.300">
       <HStack align="start" spacing={4}>
         <Image src="https://picsum.photos/200" width={220} height={220} />
-
+        <IKImage urlEndpoint="https://ik.imagekit.io/f6klfaxpzkt" path="453801468.0.0_9A75XmWJU.jpg" />
         <Flex direction="column">
           <Heading fontSize={['xl', '3xl']}>Kopi Konco</Heading>
           <Text as="cite">Genteng</Text>

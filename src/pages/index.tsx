@@ -4,12 +4,12 @@ import { getBusiness } from '@/lib/supabase'
 import { useEffect } from 'react'
 
 const HomePage = () => {
-  useEffect(() => {
-    ;(async () => {
-      const { data } = await getBusiness()
-      console.log(data)
-    })()
-  }, [])
+  // useEffect(() => {
+  //   ;(async () => {
+  //     const { data } = await getBusiness()
+  //     console.log(data)
+  //   })()
+  // }, [])
 
   return (
     <Container pb={10}>
