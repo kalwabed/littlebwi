@@ -1,7 +1,7 @@
 import { Box, Flex, Heading, HStack, Link, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 
-import { GlobeIcon, InstagramIcon } from './icons'
+import { GlobeIcon, InstagramIcon } from '@/components/icons'
 
 const Card = () => {
   return (
