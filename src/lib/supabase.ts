@@ -1,6 +1,6 @@
 import { createClient } from '@supabase/supabase-js'
 
-export const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_KEY)
+const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_KEY)
 
 export interface Item {
   id?: string
@@ -24,6 +24,14 @@ export const getItems = async () => {
 export const addNewItem = async (props: Item) => {
   try {
     return await supabase.from<Item>('items').insert({ ...props }, { returning: 'minimal' })
+  } catch (err) {
+    console.error(err)
+  }
+}
+
+export const addToStorage = async (fileName: string, file: File, storageName = 'logos') => {
+  try {
+    return await supabase.storage.from(storageName).upload(fileName, file)
   } catch (err) {
     console.error(err)
   }

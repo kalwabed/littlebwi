@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import {
   Button,
   FormControl,
@@ -7,11 +8,12 @@ import {
   Input,
   Select,
   Textarea,
+  useToast,
   VStack
 } from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
 
-import { addNewItem, supabase } from '@/lib/supabase'
+import { addNewItem, addToStorage } from '@/lib/supabase'
 
 interface FormFields {
   name: string
@@ -23,10 +25,11 @@ interface FormFields {
   logo: File[]
 }
 
-// TODO: 1. validating the input field with combination rhf and chakra
-// TODO: 2. to provide image: grab Key from supabase storage and store into image_key field
-// TODO: 3. send all to supabase and save
+const categories = ['Kafe', 'Komunitas', 'Working space', 'Startup', 'Kuliner', 'Media', 'Jasa']
+
 const FormAddItem = () => {
+  const [isLoading, setIsLoading] = useState(false)
+  const toast = useToast()
   const {
     register,
     handleSubmit,
@@ -34,10 +37,12 @@ const FormAddItem = () => {
   } = useForm<FormFields>()
 
   const formHandler = async (data: FormFields) => {
+    setIsLoading(true)
+    const logo = data.logo[0]
     const imgName = new Date().getTime().toString()
-    const imgExt = data.logo[0].type === 'image/jpeg' ? '.jpg' : '.png'
+    const imgExt = logo.type === 'image/jpeg' ? '.jpg' : '.png'
 
-    const { data: imgResult } = await supabase.storage.from('logos').upload(imgName.concat(imgExt), data.logo[0])
+    const { data: imgResult } = await addToStorage(imgName.concat(imgExt), logo)
 
     const { error } = await addNewItem({
       name: data.name,
@@ -48,7 +53,16 @@ const FormAddItem = () => {
       image_key: imgResult.Key
     })
 
-    if (error.message) console.error('[addNewItem]', error.message)
+    setIsLoading(false)
+    if (error?.message) return console.error('[addNewItem]', error.message)
+
+    toast({
+      description: 'Item berhasil ditambahkan',
+      title: 'Sukses!',
+      isClosable: true,
+      position: 'top',
+      status: 'success'
+    })
   }
 
   return (
@@ -56,22 +70,23 @@ const FormAddItem = () => {
       <FormControl id="nama" isInvalid={!!errors.name} isRequired>
         <FormLabel>Nama</FormLabel>
         <Input placeholder="contoh: Kopi Konco" {...register('name', { required: true })} />
-        <FormHelperText>Nama produk atau tempat usaha Anda</FormHelperText>
+        <FormHelperText>Suatu hal yang baik biasanya mempunyai nama</FormHelperText>
       </FormControl>
 
       <FormControl id="kategori" isInvalid={!!errors.category} isRequired>
         <FormLabel>Kategori</FormLabel>
         <Select placeholder="Pilih kategori" {...register('category', { required: true })}>
-          <option>Kafe</option>
-          <option>Working space</option>
+          {categories.map(category => (
+            <option key={category}>{category}</option>
+          ))}
         </Select>
-        <FormHelperText>Pilih kategori yang paling efektif mendeskripsikan bisnis Anda</FormHelperText>
+        <FormHelperText>Pilih kategori yang paling cocok</FormHelperText>
       </FormControl>
 
       <FormControl id="lokasi" isInvalid={!!errors.area} isRequired>
         <FormLabel>Lokasi</FormLabel>
         <Input placeholder="contoh: Genteng" {...register('area', { required: true })} />
-        <FormHelperText>Pakai nama desa/kecamatan</FormHelperText>
+        <FormHelperText>Nama desa/kecamatan</FormHelperText>
       </FormControl>
 
       <FormControl id="deskripsi" isInvalid={!!errors.description} isRequired>
@@ -80,7 +95,7 @@ const FormAddItem = () => {
           placeholder="Mawar itu merah, violet itu biru; cintaku padamu bagaikan debu"
           {...register('description', { required: true })}
         />
-        <FormHelperText>Deskripsi singkat tentang bisnis Anda</FormHelperText>
+        <FormHelperText>Deskripsi singkat tentang hal apa yang Anda tambahkan</FormHelperText>
       </FormControl>
 
       <HStack>
@@ -103,8 +118,8 @@ const FormAddItem = () => {
         <FormHelperText>Format: .jpg, .png, .jpeg</FormHelperText>
       </FormControl>
 
-      <Button type="submit" colorScheme="yellow">
-        Submit
+      <Button type="submit" colorScheme="yellow" isLoading={isLoading}>
+        Kirim
       </Button>
     </VStack>
   )
