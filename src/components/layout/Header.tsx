@@ -19,7 +19,7 @@ const Header = () => {
       <Flex direction={['column', 'row']} justify="space-between" alignItems="center" px={[4, 0]} py={[1.5, 0]}>
         <Box bg="black" py={1} px={3} color="white">
           <Text fontSize={['2xl', 'xl']} fontWeight="semibold">
-            muterbanyuwangi.id
+            littlebwi.id
           </Text>
         </Box>
 

@@ -1,20 +1,29 @@
 import { createClient } from '@supabase/supabase-js'
 
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_KEY)
+export const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_KEY)
 
-export interface Business {
-  id: string
+export interface Item {
+  id?: string
   name: string
   description: string
+  category: string
   area: string
-  image_url: string
+  image_key: string
   socials: { instagram: string; web: string }
-  created_at: string
+  created_at?: string
 }
 
-export const getBusiness = async () => {
+export const getItems = async () => {
   try {
-    return await supabase.from<Business[]>('business').select('*')
+    return await supabase.from<Item[]>('items').select('*')
+  } catch (err) {
+    console.error(err)
+  }
+}
+
+export const addNewItem = async (props: Item) => {
+  try {
+    return await supabase.from<Item>('items').insert({ ...props }, { returning: 'minimal' })
   } catch (err) {
     console.error(err)
   }

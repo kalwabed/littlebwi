@@ -1,9 +1,21 @@
+import { Box, Divider, Text } from '@chakra-ui/react'
+
+import Container from '@/components/Container'
+import FormAddItem from '@/components/FormAddItem'
+
 const NewPage = () => {
   return (
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum unde explicabo expedita nesciunt quaerat? Maiores
-      odit dolore recusandae sequi omnis quos, veritatis dolores. Quasi obcaecati vel nam ipsa laborum voluptatibus!
-    </div>
+    <Container px={16}>
+      <Box shadow="md" border="1px" borderColor="gray.100" p={10}>
+        <Text align="center" fontSize="lg" fontWeight="medium">
+          Siapa saja bebas menambahkan sesuatu
+        </Text>
+
+        <Divider my={4} />
+
+        <FormAddItem />
+      </Box>
+    </Container>
   )
 }
 

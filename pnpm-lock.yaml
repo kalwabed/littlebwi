@@ -16,10 +16,10 @@ specifiers:
   eslint: ^7.28.0
   eslint-config-next: ^10.2.3
   framer-motion: ^4.1.17
-  imagekitio-react: ^1.0.9
   next: ^10.2.3
   react: ^17.0.2
   react-dom: ^17.0.2
+  react-hook-form: ^7.8.3
   typescript: ^4.3.2
 
 dependencies:
@@ -31,10 +31,10 @@ dependencies:
   '@fontsource/inter': 4.4.2
   '@supabase/supabase-js': 1.13.2
   framer-motion: 4.1.17_react-dom@17.0.2+react@17.0.2
-  imagekitio-react: 1.0.9_react-dom@17.0.2+react@17.0.2
   next: 10.2.3_c8cdd86752aa86fb2b6e32ae91115ebe
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
+  react-hook-form: 7.8.3_react@17.0.2
 
 devDependencies:
   '@babel/core': 7.14.3
@@ -2759,22 +2759,6 @@ packages:
     engines: {node: '>= 4'}
     dev: true
 
-  /imagekit-javascript/1.3.7:
-    resolution: {integrity: sha512-ZPSMq3l1ql1ObQINiDWeh9Zhvs3kVsDRIeW7SSbs9ZftBKdNBt5auJhTjVdQgVOxhxPaCugV0V8W+7Jgjx3/pQ==}
-    dev: false
-
-  /imagekitio-react/1.0.9_react-dom@17.0.2+react@17.0.2:
-    resolution: {integrity: sha512-HaxMCIWOw6nTnk9nQ+MaCGLtYtVJ3MxE9GVaRRdF3hWah4Y7CA2Ak9scTvxkQkv2GvO+kGpHZhvx8iUf1VAItg==}
-    peerDependencies:
-      react: ^16.13.1
-      react-dom: ^16.13.1
-    dependencies:
-      imagekit-javascript: 1.3.7
-      prop-types: 15.7.2
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
-    dev: false
-
   /import-fresh/3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
     engines: {node: '>=6'}
@@ -3715,6 +3699,14 @@ packages:
       use-sidecar: 1.0.5_react@17.0.2
     transitivePeerDependencies:
       - '@types/react'
+    dev: false
+
+  /react-hook-form/7.8.3_react@17.0.2:
+    resolution: {integrity: sha512-W444tNhyyR3eaQjgtdVOvzId8Fjoexdfko0d46Nme/3Cjo3ETcF9kSVg51ut8mI805Wh2K1GKim+hEgcfIrFLA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17
+    dependencies:
+      react: 17.0.2
     dev: false
 
   /react-is/16.13.1:
