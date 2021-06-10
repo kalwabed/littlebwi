@@ -23,9 +23,11 @@ const HomePageRenderer = ({ items }: { items: Item[] }) => {
         <Card key={item.id} {...item} />
       ))}
       <Flex justify="center" w="full">
-        <Button hidden={visibleItems >= items.length} isFullWidth colorScheme="gray" onClick={handleClickMore}>
-          Muat lebih banyak
-        </Button>
+        {items && (
+          <Button hidden={visibleItems >= items.length} isFullWidth colorScheme="gray" onClick={handleClickMore}>
+            Muat lebih banyak
+          </Button>
+        )}
       </Flex>
       <Banner />
       <About />

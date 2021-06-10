@@ -1,17 +1,22 @@
 import { Box, Flex, Heading, HStack, Link, Text, Image } from '@chakra-ui/react'
-// import Image from 'next/image'
 
 import { GlobeIcon, InstagramIcon } from '@/components/icons'
 import { Item } from '@/lib/supabase'
 
 const Card = (props: Item) => {
-  const { area, description, category, image_key, name, socials } = props
+  const { area, description, image_key, name, socials } = props
   const imgUrl = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/${image_key}`
 
   return (
     <Box as="section" borderBottom="1px" pb={2} borderBottomColor="gray.300">
       <HStack align="start" spacing={4}>
-        <Image src={imgUrl} boxSize="150px" alt={`${name} logo`} borderRadius="sm" />
+        <Image
+          src={imgUrl}
+          boxSize="150px"
+          alt={`${name} logo`}
+          borderRadius="sm"
+          fallbackSrc="https://via.placeholder.com/150"
+        />
         <Flex direction="column">
           <Heading fontSize={['xl', '3xl']}>{name}</Heading>
           <Text as="cite">{area}</Text>
