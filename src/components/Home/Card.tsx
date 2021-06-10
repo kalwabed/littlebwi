@@ -2,6 +2,7 @@ import { Box, Flex, Heading, HStack, Link, Text, Image, Skeleton } from '@chakra
 
 import { GlobeIcon, InstagramIcon } from '@/components/icons'
 import { Item } from '@/lib/supabase'
+import { memo } from 'react'
 
 const Card = (props: Item) => {
   const { area, description, image_key, name, socials } = props
@@ -67,4 +68,4 @@ const Card = (props: Item) => {
   )
 }
 
-export default Card
+export default memo(Card)
