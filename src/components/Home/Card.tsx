@@ -1,54 +1,60 @@
-import { Box, Flex, Heading, HStack, Link, Text } from '@chakra-ui/react'
-import { IKImage } from 'imagekitio-react'
-import Image from 'next/image'
+import { Box, Flex, Heading, HStack, Link, Text, Image } from '@chakra-ui/react'
+// import Image from 'next/image'
 
 import { GlobeIcon, InstagramIcon } from '@/components/icons'
+import { Item } from '@/lib/supabase'
 
-const Card = () => {
+const Card = (props: Item) => {
+  const { area, description, category, image_key, name, socials } = props
+  const imgUrl = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/${image_key}`
+
   return (
     <Box as="section" borderBottom="1px" pb={2} borderBottomColor="gray.300">
       <HStack align="start" spacing={4}>
-        <Image src="https://picsum.photos/200" width={220} height={220} />
-        {/* <IKImage urlEndpoint="https://ik.imagekit.io/f6klfaxpzkt" path="453801468.0.0_9A75XmWJU.jpg" /> */}
+        <Image src={imgUrl} boxSize="150px" alt={`${name} logo`} borderRadius="sm" />
         <Flex direction="column">
-          <Heading fontSize={['xl', '3xl']}>Kopi Konco</Heading>
-          <Text as="cite">Genteng</Text>
+          <Heading fontSize={['xl', '3xl']}>{name}</Heading>
+          <Text as="cite">{area}</Text>
           <Text mt={1} fontWeight="light" fontSize={['md', 'lg']} color="gray.600">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic suscipit facilis soluta
+            {description}
           </Text>
 
           <HStack mt={1}>
-            <Link
-              isExternal
-              href="/"
-              px={0.5}
-              border="1px"
-              borderColor="gray.200"
-              bgColor="gray.100"
-              rounded="sm"
-              _hover={{ textDecor: '', bgColor: 'gray.200' }}
-            >
-              <Box display="inline-flex" alignItems="center">
-                <InstagramIcon mr={0.5} />
-                <span>Instagram</span>
-              </Box>
-            </Link>
+            {socials?.instagram && (
+              <Link
+                isExternal
+                href={`https://www.instagram.com/${socials.instagram}`}
+                px={0.5}
+                border="1px"
+                borderColor="gray.200"
+                bgColor="gray.100"
+                rounded="sm"
+                _hover={{ textDecor: '', bgColor: 'gray.200' }}
+              >
+                <Box display="inline-flex" alignItems="center">
+                  <InstagramIcon mr={0.5} />
+                  <span>Instagram</span>
+                </Box>
+              </Link>
+            )}
 
-            <Link
-              isExternal
-              href="/"
-              px={0.5}
-              border="1px"
-              borderColor="gray.200"
-              bgColor="gray.100"
-              rounded="sm"
-              _hover={{ textDecor: '', bgColor: 'gray.200' }}
-            >
-              <Box display="inline-flex" alignItems="center">
-                <GlobeIcon mr={0.5} />
-                <span>Web</span>
-              </Box>
-            </Link>
+            {socials?.web && (
+              <Link
+                isExternal
+                href={socials.web}
+                px={0.5}
+                border="1px"
+                borderColor="gray.200"
+                bgColor="gray.100"
+                rounded="sm"
+                _hover={{ textDecor: '', bgColor: 'gray.200' }}
+              >
+                <Box display="inline-flex" alignItems="center">
+                  <GlobeIcon mr={0.5} />
+                  <span>Web</span>
+                </Box>
+              </Link>
+            )}
           </HStack>
         </Flex>
       </HStack>

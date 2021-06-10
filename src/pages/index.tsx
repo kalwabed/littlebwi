@@ -1,19 +1,14 @@
+import useSwr from 'swr'
 import Container from '@/components/Container'
 import HomePageRenderer from '@/components/Home'
-import { getBusiness } from '@/lib/supabase'
-import { useEffect } from 'react'
+import { getItems } from '@/lib/supabase'
 
 const HomePage = () => {
-  // useEffect(() => {
-  //   ;(async () => {
-  //     const { data } = await getBusiness()
-  //     console.log(data)
-  //   })()
-  // }, [])
+  const { data } = useSwr('items', async () => (await getItems()).data)
 
   return (
     <Container pb={10}>
-      <HomePageRenderer />
+      <HomePageRenderer items={data} />
     </Container>
   )
 }

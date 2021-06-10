@@ -15,7 +15,7 @@ export interface Item {
 
 export const getItems = async () => {
   try {
-    return await supabase.from<Item[]>('items').select('*')
+    return await supabase.from<Item>('items').select('*')
   } catch (err) {
     console.error(err)
   }
