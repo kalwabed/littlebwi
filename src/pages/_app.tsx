@@ -5,12 +5,15 @@ import { AppProps } from 'next/app'
 
 import theme from '@/theme'
 import Layout from '@/components/layout'
+import AppContext from '@/AppContext'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
       <Layout>
-        <Component {...pageProps} />
+        <AppContext.Provider>
+          <Component {...pageProps} />
+        </AppContext.Provider>
       </Layout>
     </ChakraProvider>
   )
