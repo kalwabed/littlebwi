@@ -7,6 +7,7 @@ import Card from './Card'
 import Hero from './Hero'
 import Search from './Search'
 import { useState } from 'react'
+import ItemsSkeleton from './ItemsSkeleton'
 
 const HomePageRenderer = ({ items }: { items: Item[] }) => {
   const [visibleItems, setVisibleItems] = useState(1)
@@ -19,15 +20,21 @@ const HomePageRenderer = ({ items }: { items: Item[] }) => {
     <VStack spacing={7} align="start" px={[4, 0]}>
       <Hero />
       <Search />
+      {!items && <ItemsSkeleton />}
+
       {items?.slice(0, visibleItems).map(item => (
         <Card key={item.id} {...item} />
       ))}
+
       <Flex justify="center" w="full">
-        {items && (
-          <Button hidden={visibleItems >= items.length} isFullWidth colorScheme="gray" onClick={handleClickMore}>
-            Muat lebih banyak
-          </Button>
-        )}
+        <Button
+          hidden={!items || visibleItems >= items?.length}
+          isFullWidth
+          colorScheme="gray"
+          onClick={handleClickMore}
+        >
+          Muat lebih banyak
+        </Button>
       </Flex>
       <Banner />
       <About />

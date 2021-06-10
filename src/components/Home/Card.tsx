@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, HStack, Link, Text, Image } from '@chakra-ui/react'
+import { Box, Flex, Heading, HStack, Link, Text, Image, Skeleton } from '@chakra-ui/react'
 
 import { GlobeIcon, InstagramIcon } from '@/components/icons'
 import { Item } from '@/lib/supabase'
