@@ -101,14 +101,14 @@ const FormAddItem = () => {
       <HStack>
         <FormControl id="instagram">
           <FormLabel>Instagram</FormLabel>
-          <Input placeholder="Opsional" {...register('instagram')} />
-          <FormHelperText>Username akun Instagram</FormHelperText>
+          <Input placeholder="kopikutah.id" {...register('instagram')} />
+          <FormHelperText>Username akun Instagram (opsional)</FormHelperText>
         </FormControl>
 
         <FormControl id="website">
           <FormLabel>Website</FormLabel>
-          <Input placeholder="Opsional" {...register('website')} />
-          <FormHelperText>Alamat lengkap website</FormHelperText>
+          <Input placeholder="https://example.com" {...register('website')} />
+          <FormHelperText>Alamat lengkap website (opsional)</FormHelperText>
         </FormControl>
       </HStack>
 

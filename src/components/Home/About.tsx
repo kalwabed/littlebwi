@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Text, VStack } from '@chakra-ui/react'
+import { Heading, Text, VStack } from '@chakra-ui/react'
 
 const About = () => {
   return (
@@ -7,9 +7,9 @@ const About = () => {
         Tentang
       </Heading>
       <Text>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quaerat officiis molestias, labore eveniet
-        obcaecati delectus necessitatibus facere consequuntur esse deleniti distinctio laboriosam iste nobis! Cumque
-        consequuntur tempore quis laboriosam!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum neque voluptatibus distinctio eaque omnis
+        pariatur non libero totam dolores provident. Similique iusto, aspernatur tenetur non magni quas officia vero
+        eveniet.
       </Text>
       <Text>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Id obcaecati delectus, fugiat maiores non neque, quasi

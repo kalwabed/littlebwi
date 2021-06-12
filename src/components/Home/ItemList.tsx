@@ -10,7 +10,7 @@ const Card = dynamic(() => import('./Card'))
 
 const ItemList = ({ items }: { items: Item[] }) => {
   const { category, searchKey } = useAppContext()
-  const [visibleItems, setVisibleItems] = useState(1)
+  const [visibleItems, setVisibleItems] = useState(5)
 
   const filteredItems = () => {
     if (!items) return null
@@ -32,7 +32,7 @@ const ItemList = ({ items }: { items: Item[] }) => {
   }
 
   const handleClickMore = () => {
-    setVisibleItems(prev => prev + 2)
+    setVisibleItems(prev => prev + 3)
   }
 
   return (
