@@ -7,6 +7,7 @@ import {
   HStack,
   Input,
   Select,
+  Stack,
   Textarea,
   useToast,
   VStack
@@ -98,7 +99,7 @@ const FormAddItem = () => {
         <FormHelperText>Deskripsi singkat tentang hal apa yang Anda tambahkan</FormHelperText>
       </FormControl>
 
-      <HStack>
+      <Stack direction={['column','row']}>
         <FormControl id="instagram">
           <FormLabel>Instagram</FormLabel>
           <Input placeholder="kopikutah.id" {...register('instagram')} />
@@ -110,7 +111,7 @@ const FormAddItem = () => {
           <Input placeholder="https://example.com" {...register('website')} />
           <FormHelperText>Alamat lengkap website (opsional)</FormHelperText>
         </FormControl>
-      </HStack>
+      </Stack>
 
       <FormControl id="logo" isInvalid={!!errors.logo} isRequired>
         <FormLabel>Logo</FormLabel>
