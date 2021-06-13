@@ -6,7 +6,7 @@ const Hero = () => (
       Little Banyuwangi
     </Heading>
     <Text>
-      Tempat dimana kamu bisa temukan kafe, barber shop, komunitas, hingga usaha-usaha startup yang ada di Banyuwangi.
+      Tempat dimana kamu bisa temukan kafe, working space, komunitas, hingga usaha-usaha startup yang ada di Banyuwangi.
     </Text>
   </Box>
 )
