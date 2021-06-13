@@ -7,7 +7,7 @@ const Banner = () => {
     <Box p={4} w="full" rounded="lg" shadow="xl" position="relative" overflow="hidden">
       <Box position="relative" zIndex={10}>
         <Text textAlign="center" color="white" fontSize={['xl', '2xl']} fontWeight="semibold">
-          Mari berkontribusi menyebarkan hal positif
+          Mari saling mengenal
         </Text>
         <Flex direction="column" justify="center" align="center">
           <Link href="/new">

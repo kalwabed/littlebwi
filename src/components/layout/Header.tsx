@@ -1,13 +1,16 @@
-import { Flex, LinkProps, LinkOverlay, Text, HStack, Box, LinkBox, Button } from '@chakra-ui/react'
+import { AddIcon } from '@chakra-ui/icons'
+import { Flex, LinkProps, Text, HStack, Box, Button, ButtonProps } from '@chakra-ui/react'
 import Link from 'next/link'
 
 import Container from '../Container'
 
-interface NavLinkProps extends LinkProps {}
+interface NavLinkProps extends ButtonProps {
+  href: string
+}
 
 const NavLink = (props: NavLinkProps) => (
   <Link href={props.href} passHref>
-    <Button as="a" variant="ghost" h={12} fontWeight="normal">
+    <Button as="a" variant="ghost" h={12} fontWeight="normal" {...props}>
       {props.children}
     </Button>
   </Link>
@@ -32,7 +35,9 @@ const Header = () => {
 
         <HStack spacing={1} mt={[2, 0]}>
           <NavLink href="/">Beranda</NavLink>
-          <NavLink href="/new">Daftar</NavLink>
+          <NavLink href="/new" leftIcon={<AddIcon />}>
+            Tambah
+          </NavLink>
         </HStack>
       </Flex>
     </Container>
