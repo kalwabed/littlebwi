@@ -1,5 +1,5 @@
 import { AddIcon } from '@chakra-ui/icons'
-import { Flex, LinkProps, Text, HStack, Box, Button, ButtonProps } from '@chakra-ui/react'
+import { Flex, Text, HStack, Box, Button, ButtonProps } from '@chakra-ui/react'
 import Link from 'next/link'
 
 import Container from '../Container'
@@ -35,6 +35,7 @@ const Header = () => {
 
         <HStack spacing={1} mt={[2, 0]}>
           <NavLink href="/">Beranda</NavLink>
+          <NavLink href="/faq">FAQ</NavLink>
           <NavLink href="/new" leftIcon={<AddIcon />}>
             Tambah
           </NavLink>
