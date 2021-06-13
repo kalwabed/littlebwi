@@ -17,6 +17,8 @@ specifiers:
   eslint-config-next: ^10.2.3
   framer-motion: ^4.1.17
   next: ^10.2.3
+  next-seo: ^4.24.0
+  next-sitemap: ^1.6.108
   react: ^17.0.2
   react-dom: ^17.0.2
   react-hook-form: ^7.8.3
@@ -33,6 +35,8 @@ dependencies:
   '@supabase/supabase-js': 1.13.2
   framer-motion: 4.1.17_react-dom@17.0.2+react@17.0.2
   next: 10.2.3_c8cdd86752aa86fb2b6e32ae91115ebe
+  next-seo: 4.24.0_cdb07c42721266739ffbd3ea8e818efe
+  next-sitemap: 1.6.108_next@10.2.3
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-hook-form: 7.8.3_react@17.0.2
@@ -1044,6 +1048,10 @@ packages:
       '@chakra-ui/system': 1.6.7_7874f5fd290ce587db5f5f81e8a37ea9
       '@chakra-ui/utils': 1.8.0
       react: 17.0.2
+    dev: false
+
+  /@corex/deepmerge/2.6.20:
+    resolution: {integrity: sha512-oZZxwDtV0bf8VPcSIhZPvdBFUkVIC8zRblUjrrVAsbGRiqUuZJfoXw2M6NDiIXWcUCfOqbkFND6Yf3b9ej9AjA==}
     dev: false
 
   /@emotion/babel-plugin/11.3.0_@babel+core@7.14.3:
@@ -3086,6 +3094,13 @@ packages:
       semver: 6.3.0
     dev: false
 
+  /matcher/4.0.0:
+    resolution: {integrity: sha512-S6x5wmcDmsDRRU/c2dkccDwQPXoFczc5+HpQ2lON8pnvHlnvHAHj5WlLVvw6n6vNyHuVugYrFohYxbS+pvFpKQ==}
+    engines: {node: '>=10'}
+    dependencies:
+      escape-string-regexp: 4.0.0
+    dev: false
+
   /md5.js/1.3.5:
     resolution: {integrity: sha512-xitP+WxNPcTTOgnTJcrhM0xvdPepipPSf3I8EIpGKeFLjt3PlJLIDG3u8EX53ZIubkb+5U2+3rELYpEhHhzdkg==}
     dependencies:
@@ -3162,6 +3177,30 @@ packages:
   /natural-compare/1.4.0:
     resolution: {integrity: sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=}
     dev: true
+
+  /next-seo/4.24.0_cdb07c42721266739ffbd3ea8e818efe:
+    resolution: {integrity: sha512-9VQXfXAelhE+hAWzJ4azigQaW3FPX0kU0eYKFQXKsQjgY7AWtukjRGXls0oSIk8khhDJwmCt46EwsO9n5DDW6Q==}
+    peerDependencies:
+      next: ^8.1.1-canary.54 || ^9.0.0 || ^10.0.0
+      react: ^16.0.0 || ^17.0.0
+      react-dom: ^16.0.0 || ^17.0.0
+    dependencies:
+      next: 10.2.3_c8cdd86752aa86fb2b6e32ae91115ebe
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+    dev: false
+
+  /next-sitemap/1.6.108_next@10.2.3:
+    resolution: {integrity: sha512-uzqpIAm/zgDpmhb8JwKXRFRr8n0lyKZ30AqwjNUazS9uZqkkHnH8frMsMqB/wO0Ypq3Z+q6kpzPa0FYr6hP0Zw==}
+    hasBin: true
+    peerDependencies:
+      next: '*'
+    dependencies:
+      '@corex/deepmerge': 2.6.20
+      matcher: 4.0.0
+      minimist: 1.2.5
+      next: 10.2.3_c8cdd86752aa86fb2b6e32ae91115ebe
+    dev: false
 
   /next-tick/1.0.0:
     resolution: {integrity: sha1-yobR/ogoFpsBICCOPchCS524NCw=}

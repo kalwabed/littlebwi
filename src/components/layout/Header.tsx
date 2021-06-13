@@ -26,7 +26,7 @@ const Header = () => {
       >
         <Box bg="black" py={1} px={3} color="white">
           <Text fontSize={['2xl', 'xl']} fontWeight="semibold">
-            littlebwi.id
+            littlebwi
           </Text>
         </Box>
 
