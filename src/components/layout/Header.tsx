@@ -1,5 +1,5 @@
 import { AddIcon } from '@chakra-ui/icons'
-import { Flex, Text, HStack, Box, Button, ButtonProps } from '@chakra-ui/react'
+import { Flex, Text, HStack, Box, Button, ButtonProps, LinkBox, LinkOverlay } from '@chakra-ui/react'
 import Link from 'next/link'
 
 import Container from '../Container'
@@ -27,11 +27,13 @@ const Header = () => {
         px={[4, 0]}
         py={[1.5, 0]}
       >
-        <Box bg="black" py={1} px={3} color="white">
-          <Text fontSize={['2xl', 'xl']} fontWeight="semibold">
-            littlebwi
-          </Text>
-        </Box>
+        <LinkBox bg="black" py={1} px={3} color="white">
+          <Link href="/" passHref>
+            <LinkOverlay fontSize={['2xl', 'xl']} fontWeight="semibold">
+              littlebwi
+            </LinkOverlay>
+          </Link>
+        </LinkBox>
 
         <HStack spacing={1} mt={[2, 0]}>
           <NavLink href="/">Beranda</NavLink>
