@@ -37,7 +37,7 @@ const Header = () => {
 
         <HStack spacing={1} mt={[2, 0]}>
           <NavLink href="/">Beranda</NavLink>
-          <NavLink href="/faq">FAQ</NavLink>
+          {/* <NavLink href="/faq">FAQ</NavLink> */}
           <NavLink href="/new" leftIcon={<AddIcon />}>
             Tambah
           </NavLink>

@@ -1,18 +1,21 @@
-import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Link } from '@chakra-ui/react'
+// cSpell:disable
+import {
+  Accordion,
+  AccordionButton,
+  AccordionIcon,
+  AccordionItem,
+  AccordionPanel,
+  Box,
+  Link,
+  Text
+} from '@chakra-ui/react'
 
 const faqs = [
   {
-    ask: '1x1 =?',
-    answer: (
-      <p>
-        hai saya ada link{' '}
-        <Link href="href" color="blue.500">
-          ini
-        </Link>
-      </p>
-    )
+    ask: 'Apakah saya boleh menambahkan sesuatu?',
+    answer: <Text>Boleh. Anda bisa menambahkan bisnis/usaha, komunitas, dll.</Text>
   },
-  { ask: '1+1 =?', answer: '2' },
+  { ask: 'Apakah ada ketentuan khusus?', answer: <Text>ada</Text> },
   { ask: '1-1 =?', answer: '2' },
   { ask: '1--1 =?', answer: '2' },
   { ask: '1++1 =?', answer: '2' }
