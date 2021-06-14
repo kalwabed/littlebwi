@@ -8,7 +8,7 @@ const About = () => {
 
   return (
     <VStack spacing={4} align="start">
-      <Heading size="lg" as="h3">
+      <Heading id="about" size="lg" as="h3">
         Tentang
       </Heading>
       <Text>

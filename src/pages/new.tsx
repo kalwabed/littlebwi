@@ -12,9 +12,10 @@ const NewPage = () => {
         <title>Daftar baru | {appConfig.titlePrefix}</title>
       </Head>
       <Box shadow="md" border="1px" borderColor="gray.100" p={10}>
-        <Text align="center" fontSize="lg" fontWeight="medium">
-          Siapa saja bebas menambahkan sesuatu
+        <Text align="center" fontSize="lg" fontWeight="semibold">
+          Tambah item baru
         </Text>
+        <Text align="center">lebih dikenal, lebih menjangkau banyak orang </Text>
 
         <Divider my={4} />
 
