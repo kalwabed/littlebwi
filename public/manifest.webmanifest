@@ -1,0 +1,13 @@
+{
+  "name": "Little BWI",
+  "short_name": "littlebwi",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "Hal-hal positif yang ada di Banyuwangi. Little BWI - cari kafe, working space, komunitas, dan banyak lagi.",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "/192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}
