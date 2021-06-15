@@ -19,6 +19,7 @@ specifiers:
   next: ^10.2.3
   next-seo: ^4.24.0
   next-sitemap: ^1.6.108
+  preact: ^10.5.13
   react: ^17.0.2
   react-dom: ^17.0.2
   react-hook-form: ^7.8.3
@@ -37,6 +38,7 @@ dependencies:
   next: 10.2.3_c8cdd86752aa86fb2b6e32ae91115ebe
   next-seo: 4.24.0_cdb07c42721266739ffbd3ea8e818efe
   next-sitemap: 1.6.108_next@10.2.3
+  preact: 10.5.13
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-hook-form: 7.8.3_react@17.0.2
@@ -3614,6 +3616,10 @@ packages:
       colorette: 1.2.2
       nanoid: 3.1.23
       source-map: 0.6.1
+    dev: false
+
+  /preact/10.5.13:
+    resolution: {integrity: sha512-q/vlKIGNwzTLu+jCcvywgGrt+H/1P/oIRSD6mV4ln3hmlC+Aa34C7yfPI4+5bzW8pONyVXYS7SvXosy2dKKtWQ==}
     dev: false
 
   /prelude-ls/1.2.1:
